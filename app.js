@@ -2,30 +2,32 @@ console.log('This is notes taking app.')
 
 showNotes();
 
-// let note;
+
 let addNoteBtn = document.getElementById('addNoteBtn');
 addNoteBtn.addEventListener('click', function(e){
     let title = document.getElementById('title');
     let notetxt = document.getElementById('addtext');
     let notes = localStorage.getItem('notes');
-    
-    if(notes == null)
-        notesarr = [];
-    else{        
-        notesarr = JSON.parse(notes);
-    }
-    let noteobj = {
-        'title': title.value,
-        'notetxt': notetxt.value
-    } 
-    notesarr.push(noteobj);
-    localStorage.setItem('notes', JSON.stringify(notesarr));
-    title.value = '';
-    addtext.value = '';
-    
-    console.log(notesarr);
+    if(title.value != '' && notetxt.value != '')
+    {
+        if(notes == null)
+            notesarr = [];
+        else{        
+            notesarr = JSON.parse(notes);
+        }
+        let noteobj = {
+            'title': title.value,
+            'notetxt': notetxt.value
+        } 
+        notesarr.push(noteobj);
+        localStorage.setItem('notes', JSON.stringify(notesarr));
+        title.value = '';
+        addtext.value = '';
+        
+        console.log(notesarr);
 
-    showNotes();
+        showNotes();
+    }
     
 });
 
