@@ -23,9 +23,7 @@ addNoteBtn.addEventListener('click', function(e){
         localStorage.setItem('notes', JSON.stringify(notesarr));
         title.value = '';
         addtext.value = '';
-        
-        console.log(notesarr);
-
+    
         showNotes();
     }
     
@@ -41,13 +39,10 @@ function showNotes(){
     }
 
     let html = '';
-    console.log(notesarr);
-    console.log(notesarr.length);
     if(notesarr.length == '0')
             html = '<p class="lead"> Nothing to show here. Please add a note. </p>';
     else{
         notesarr.forEach(function(element, index){
-            console.log(element)
             html += `
                 <div class="noteCard card mx-2 my-2" style="width: 18rem">
                 <div class="card-body">
@@ -59,12 +54,8 @@ function showNotes(){
                 `;
         });
     }
-
-    let notesElement = document.getElementById('notes');
-        
+    let notesElement = document.getElementById('notes');      
     notesElement.innerHTML = html;
-
-        // console.log(notesElement);
 }
 
 function delNote(index){
