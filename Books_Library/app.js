@@ -1,24 +1,35 @@
 console.log('Books Library')
 
+
 function Book(bname, author, type){
     this.bname = bname;
     this.author = author;
     this.type = type;
 }
 
-function Display(){
-
-}
+function Display(){}
 
 Display.prototype.add = function(book){
-    tableBody = document.getElementById('tableBody');
-    let html = `
-                <tr>
-                    <td>${book.bname}</td>
-                    <td>${book.author}</td>
-                    <td>${book.type}</td>
-                </tr>`
-    tableBody.innerHTML += html;
+
+    let books = localStorage.getItem('books');
+    let booksarr;
+    if(books == null)
+        booksarr = [];
+    else    
+        booksarr = JSON.parse(books);
+    
+        booksarr.push(book);
+
+    localStorage.setItem('books', JSON.stringify(booksarr));
+
+    // tableBody = document.getElementById('tableBody');
+    // let html = `
+    //             <tr>
+    //                 <td>${book.bname}</td>
+    //                 <td>${book.author}</td>
+    //                 <td>${book.type}</td>
+    //             </tr>`
+    // tableBody.innerHTML += html;
 };
 
 Display.prototype.clear = function(){
@@ -44,6 +55,26 @@ Display.prototype.show = function(type, msg){
     setTimeout(function(){
         message.innerHTML = '';
     }, 3000)
+}
+
+Display.prototype.showBooks = function(){
+    let books = localStorage.getItem('books');
+    let booksarr;
+    if(books == null)
+        booksarr = [];
+    else    
+        booksarr = JSON.parse(books);
+    
+    tableBody = document.getElementById('tableBody');
+    booksarr.forEach(function(element){
+            let html = `
+                        <tr>
+                            <td>${element.bname}</td>
+                            <td>${element.author}</td>
+                            <td>${element.type}</td>
+                        </tr>`
+            tableBody.innerHTML += html;
+    });
 }
 
 let form = document.getElementById('libraryForm');
@@ -75,6 +106,7 @@ function libraryFormSubmit(e){
         display.add(book);
         display.clear();
         display.show('success', 'Bood Added Successfully');
+        display.showBooks();
     }
     else{
         display.show('warning', 'Please check the input once again!');
