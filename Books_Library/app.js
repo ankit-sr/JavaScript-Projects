@@ -1,4 +1,4 @@
-console.log('Books Library')
+// console.log('Books Library')
 
 
 function Book(bname, author, type){
@@ -82,7 +82,7 @@ form.addEventListener('submit', libraryFormSubmit);
 
 function libraryFormSubmit(e){
     e.preventDefault();
-    console.log('Clicked submit button');
+    // console.log('Clicked submit button');
 
     let bname = document.getElementById('bname').value;
     let author = document.getElementById('author').value;
@@ -99,7 +99,7 @@ function libraryFormSubmit(e){
         type = magazine.value;
 
     let book = new Book(bname, author, type);
-    console.log(book);
+    // console.log(book);
 
     let display = new Display();
     if(display.validate(book)){
