@@ -102,7 +102,7 @@ function libraryFormSubmit(e){
         book.add(book);
         book.clear();
         book.show('success', 'Bood Added Successfully');
-        book.showBooks();
+        Book.showBooks();
     }
     else{
         book.show('warning', 'Please check the input once again!');
