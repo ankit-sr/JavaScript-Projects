@@ -1,0 +1,33 @@
+.row{
+    justify-content: center;
+}
+
+.news-card{
+    position: relative;
+    width: 45%;
+    height: 48vh;
+    margin: 1em;
+    padding: 1em;
+    background-color: antiquewhite;
+    background-size: cover;
+    
+}
+
+.news-card span{
+    position: absolute;
+    bottom: 0;
+
+}
+
+.news-card span a{
+    text-decoration: none;
+    color: black;
+}
+
+
+@media (max-width: 1024px)
+{
+    .news-card{
+        width: 100%;
+    }
+}
