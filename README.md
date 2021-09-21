@@ -6,4 +6,6 @@ This repository includes some basic JavaScript projects.
     
 - [Books Library](Books_Library/)
     - [Visit the hosted webpage here](https://ankit-sr.github.io/JavaScript-Projects/Books_Library/)
-    
+
+- [Quick News](Quick_News/)
+    - [Visit the hosted webpage here](https://ankit-sr.github.io/JavaScript-Projects/Quick_News/)`
