@@ -40,44 +40,48 @@
                     </div>
                 </fieldset>
 
-                <!-- Content Type -->
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="content-type" id="content-json" value="json" checked>
-                      <label class="form-check-label" for="content-json">
-                        JSON
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="content-type" id="content-custom" value="custom">
-                      <label class="form-check-label" for="content-custom">
-                        Custom Parameters
-                      </label>
-                    </div>                    
-                </fieldset>
+                <div id="postRequestInputDiv">
 
-                <!-- JSON Request  -->
-                <div class="row mb-3" id="jsonRequest">
-                    <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">Enter Request JSON</label>
-                    <div class="col-sm-6">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                </div>
+                    <!-- Content Type -->
+                    <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="content-type" id="content-json" value="json" checked>
+                        <label class="form-check-label" for="content-json">
+                            JSON
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="content-type" id="content-custom" value="custom">
+                        <label class="form-check-label" for="content-custom">
+                            Custom Parameters
+                        </label>
+                        </div>                    
+                    </fieldset>
 
-                <!-- Custom Request -->
-                <div class="row mb-3" id="customRequest">
-                    <label class="col-sm-2 col-form-label" for="parameters">Parameter</label>
-                    <div class="col-sm-3">
-                      <input type="text" class="form-control" placeholder="Key" aria-label="Key">
+                    <!-- JSON Request  -->
+                    <div class="row mb-3" id="jsonRequest">
+                        <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">Enter Request JSON</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
                     </div>
-                    <div class="col-sm-3">
-                      <input type="text" class="form-control" placeholder="Value" aria-label="Value">
+
+                    <!-- Custom Request -->
+                    <div class="row mb-3" id="customRequest">
+                        <label class="col-sm-2 col-form-label" for="parameters">Parameter</label>
+                        <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="Key" aria-label="Key">
+                        </div>
+                        <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="Value" aria-label="Value">
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-sm btn-primary">+</button>
+                        </div>
                     </div>
-                    <div class="col-sm-1">
-                        <button class="btn btn-sm btn-primary">+</button>
-                    </div>
+
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-3">Submit</button>
