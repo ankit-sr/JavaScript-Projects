@@ -18,7 +18,7 @@
                 <div class="row mb-3">
                   <label for="basic-url" class="col-sm-2 col-form-label">URL</label>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="https://api.github.com/users" required>
                   </div>
                 </div>
 
@@ -69,22 +69,24 @@
                     </div>
 
                     <!-- Custom Request -->
-                    <div class="row mb-3" id="customRequest">
-                        <label class="col-sm-2 col-form-label" for="parameters">Parameter</label>
-                        <div class="col-sm-3">
-                        <input type="text" class="form-control" placeholder="Key" aria-label="Key">
-                        </div>
-                        <div class="col-sm-3">
-                        <input type="text" class="form-control" placeholder="Value" aria-label="Value">
-                        </div>
-                        <div class="col-sm-1">
-                            <button class="btn btn-sm btn-primary">+</button>
-                        </div>
+                    <div id="customRequest">
+                      <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="parameters">Parameter</label>
+                          <div class="col-sm-3">
+                          <input type="text" class="form-control custom-key" placeholder="Key" aria-label="Key">
+                          </div>
+                          <div class="col-sm-3">
+                          <input type="text" class="form-control custom-value" placeholder="Value" aria-label="Value">
+                          </div>
+                          <div class="col-sm-1">
+                              <button class="btn-sm btn-primary" id="addCustomBtn">+</button>
+                          </div>
+                      </div>
                     </div>
 
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                <button type="submit" class="btn btn-primary mb-3" id="submitBtn">Submit</button>
 
             </form>
 
